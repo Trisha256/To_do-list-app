@@ -39,3 +39,31 @@
   text-decoration:line-through;
   opacity:0.6;
 }
+
+.task-actions{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+button.mini{
+  padding:6px 10px;
+  font-size:12px;
+  border-radius:8px;
+  background:#667eea;
+  border:none;
+  color:white;
+  cursor:pointer;
+}
+
+button.mini.secondary{
+  background:#d9d9d9;
+  color:#333;
+}
+
+.edit-input{
+  width:100%;
+  padding:8px;
+  border-radius:8px;
+  border:1px solid #ccc;
+}
