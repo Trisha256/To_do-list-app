@@ -1,25 +1,60 @@
-function addTask(){
+const STORAGE_KEY = "todo_tasks_v1";
 
-const taskInput = document.getElementById("taskInput");
-const taskText = taskInput.value;
-
-if(taskText === ""){
-alert("Please enter a task");
-return;
+function loadTasks() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    const tasks = raw ? JSON.parse(raw) : [];
+    return Array.isArray(tasks) ? tasks : [];
+  } catch (e) {
+    return [];
+  }
 }
 
-const li = document.createElement("li");
+function saveTasks(tasks) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
+}
 
-li.innerHTML = `
+function renderTasks(tasks) {
+  const list = document.getElementById("taskList");
+  list.innerHTML = "";
+
+  tasks.forEach((taskText, index) => {
+    const li = document.createElement("li");
+
+    li.innerHTML = `
 ${taskText}
-<span class="delete" onclick="deleteTask(this)">❌</span>
-`;
+<span class="delete" onclick="deleteTask(${index})">❌</span>
+    `;
 
-document.getElementById("taskList").appendChild(li);
-
-taskInput.value = "";
+    list.appendChild(li);
+  });
 }
 
-function deleteTask(element){
-element.parentElement.remove();
+function addTask() {
+  const taskInput = document.getElementById("taskInput");
+  const taskText = taskInput.value.trim();
+
+  if (taskText === "") {
+    alert("Please enter a task");
+    return;
+  }
+
+  const tasks = loadTasks();
+  tasks.push(taskText);
+  saveTasks(tasks);
+  renderTasks(tasks);
+
+  taskInput.value = "";
 }
+
+function deleteTask(index) {
+  const tasks = loadTasks();
+  tasks.splice(index, 1);
+  saveTasks(tasks);
+  renderTasks(tasks);
+}
+
+// Initial render on page load
+document.addEventListener("DOMContentLoaded", () => {
+  renderTasks(loadTasks());
+});
