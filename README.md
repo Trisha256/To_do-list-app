@@ -4,9 +4,7 @@ A simple **Task Manager / To‑Do List** web app built with **HTML, CSS, and Jav
 It supports saving tasks in your browser using **localStorage**, marking tasks as **completed**, filtering tasks, and **editing** task names.
 
 ## Live Demo
-If you enabled GitHub Pages, your live site will look like:
-
-- `https://trisha256.github.io/To_do-list-app/`
+https://trisha256.github.io/To_do-list-app/
 
 (If you don’t see it, go to **Repo → Settings → Pages → Deploy from branch → main → /(root)**.)
 
