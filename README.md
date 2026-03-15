@@ -6,8 +6,6 @@ It supports saving tasks in your browser using **localStorage**, marking tasks a
 ## Live Demo
 https://trisha256.github.io/To_do-list-app/
 
-(If you don’t see it, go to **Repo → Settings → Pages → Deploy from branch → main → /(root)**.)
-
 ## Features
 - Add new tasks
 - Delete tasks
