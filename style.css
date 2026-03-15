@@ -1,50 +1,41 @@
-body{
-font-family: Arial;
-background: linear-gradient(to right,#667eea,#764ba2);
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-margin:0;
+.filters{
+  display:flex;
+  gap:8px;
+  justify-content:center;
+  margin:10px 0 0;
 }
 
-.container{
-background:white;
-padding:30px;
-border-radius:10px;
-width:350px;
-text-align:center;
-box-shadow:0 8px 20px rgba(0,0,0,0.2);
+.filters button{
+  padding:8px 10px;
+  background:#e9e9ff;
+  color:#333;
+  border:1px solid #cfcfff;
+  border-radius:8px;
 }
 
-input{
-padding:10px;
-width:70%;
-margin-bottom:10px;
+.filters button.active{
+  background:#667eea;
+  color:white;
+  border-color:#667eea;
 }
 
-button{
-padding:10px;
-background:#667eea;
-border:none;
-color:white;
-cursor:pointer;
+.task{
+  align-items:center;
 }
 
-ul{
-list-style:none;
-padding:0;
+.task-left{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex:1;
+  text-align:left;
 }
 
-li{
-padding:10px;
-background:#f2f2f2;
-margin-top:5px;
-display:flex;
-justify-content:space-between;
+.task-text{
+  word-break:break-word;
 }
 
-.delete{
-color:red;
-cursor:pointer;
+.task.completed .task-text{
+  text-decoration:line-through;
+  opacity:0.6;
 }
