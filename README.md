@@ -4,7 +4,7 @@ A simple **Task Manager / To‑Do List** web app built with **HTML, CSS, and Jav
 It supports saving tasks in your browser using **localStorage**, marking tasks as **completed**, filtering tasks, and **editing** task names.
 
 ## Live Demo
-https://trisha256.github.io/To_do-list-app/
+https://task-manager-app-one-lovat.vercel.app/
 
 ## Features
 - Add new tasks
